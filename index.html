@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>PageFlip</title>
+
+</head>
+<body>
+
+    <!-- Contêiner onde a revista será exibida -->
+    <div class="container">
+        <div id="revista"></div>
+    </div>
+
+    <!-- Certifique-se de incluir o script após o contêiner -->
+    <script src= "node_modules\page-flip\dist\js\page-flip.browser.js"></script>
+
+    <script>
+        // Configuração do PageFlip
+        const pageFlip = new St.PageFlip(document.getElementById('revista'), {
+            width: 923,  // Largura base da página
+            height: 694, // Altura base da página
+            size: 'stretch', // Tamanho fixo para a revista
+            
+            
+        });
+
+        // Carrega as imagens como páginas
+        pageFlip.loadFromImages([
+            '1.png',
+            '2.png',
+            '3.png',
+            '4.png',
+            '5.png',
+            '6.png',
+            '7.png',
+            '8.png',
+            '9.png',
+            '10.png', // Substitua pelo caminho real da imagem 1
+            '11.png', // Substitua pelo caminho real da imagem 2
+            '12.png', // Substitua pelo caminho real da imagem 3
+            // Continue com as demais imagens
+        ]);
+    </script>
+</body>
+<style>
+    /* Reset das margens para remover qualquer espaço branco extra */
+    body, html {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        height: 100%;
+    }
+    
+    /* O contêiner da revista ocupa toda a tela */
+    #revista {
+        width: 100vw;  /* 100% da largura da viewport */
+        height: 100vh; /* 100% da altura da viewport */
+        background-color: black; /* Fundo transparente */
+    }
+
+    /* Canvas do PageFlip */
+    .stf__canvas {
+        background-color: transparent; /* Remove o fundo branco do canvas */
+    }
+</style>
+</html>
