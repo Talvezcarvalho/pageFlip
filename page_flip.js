@@ -6,4 +6,3 @@ const pageFlip = new PageFlip(document.getElementById('revista'), {
     size: 'fixed'
 
 });
-pageFlip.loadFromImages(['2.jpg', '3.jpg', '4.jpg' ]);
