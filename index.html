@@ -37,10 +37,28 @@
     <script src="./js/page-flip.browser.js"></script>
 
     <script>
+        function calculatePageSize() {
+            const screenWidth = window.innerWidth;
+            const screenHeight = window.innerHeight;
+
+            let pageWidth = 800; // Padrão
+            let pageHeight = 600; // Padrão
+
+            // Condicional para ajustar o tamanho em telas menores
+            if (screenWidth <= 800) {
+                pageWidth = screenWidth * 0.9; // 90% da largura da tela
+                pageHeight = screenHeight * 0.9; // 90% da altura da tela
+            }
+
+            return { pageWidth, pageHeight };
+        }
+        const { pageWidth, pageHeight } = calculatePageSize();
         // Configuração do PageFlip
         const pageFlip = new St.PageFlip(document.getElementById('revista'), {
-            width: 800,  // Largura base da página
-            height: 600, // Altura base da página
+
+            
+            width: pageWidth,  // Largura base da página
+            height: pageHeight, // Altura base da página
             size: 'fixed', // Tamanho fixo para a revista
             
             
